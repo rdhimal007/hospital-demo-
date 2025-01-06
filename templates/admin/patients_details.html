@@ -1,0 +1,250 @@
+{% extends "../base.html" %}
+{% block title %}{{profile.username}}{% endblock %}
+{% block content %}
+<section class="bg-white dark:bg-gray-900">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class=" lg:mt-0 lg:col-span-3">
+            {% include "./nav.html" %}
+        </div>
+        <div class=" lg:col-span-9 pl-5">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                {% comment %} <h1 class="text-xl font-bold leading-tight tracking-tight text-purple-900 md:text-2xl dark:text-white text-center">
+                    UIH | {{profile.username}}
+                </h1> {% endcomment %}
+                    <h1 class="text-xl text-left font-bold text-purple-700 mb-5 ">
+                        Information:
+                    </h1>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                            
+                            <tbody>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Username
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.username}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Email
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.email}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        First Name
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.first_name}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Middle Name
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.middle_name}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Last Name
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.last_name}}
+                                    </th>
+                                    
+                                </tr>
+                                
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Age
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.age}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Gender
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.gender}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Phone Number
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.phone_number}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Address
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.address}}
+                                    </th>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h1 class="text-xl text-left font-bold text-purple-700 mb-5 ">
+                        Social Information:
+                    </h1>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border">
+                        
+                            <tbody>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        SSN
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.patientprofile.ssn}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Race
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.patientprofile.race}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Occupation
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.patientprofile.occupation}}
+                                    </th>
+                                    
+                                </tr>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Medical History
+                                    </th>
+                                    <th class="px-6 py-4 text-purple-700">
+                                        {{profile.patientprofile.medical_history}}
+                                    </th>
+                                    
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <h1 class="text-xl text-left font-bold text-purple-700 mb-10 mt-8">
+                        Vaccinations Scheduled ({{schedule_on_hold_count}}):
+                    </h1>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border ">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3">Patient</th>
+                                    <th scope="col" class="px-4 py-3">vaccine</th>
+                                    <th scope="col" class="px-4 py-3">Date</th>
+                                    <th scope="col" class="px-4 py-3">Time</th>
+                                    <th scope="col" class="px-4 py-3">State</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for schedule in schedule_on_hold %}
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.patient.user.username}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.vaccine}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.schedule_date}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.schedule_time}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">On Hold</span>
+                                    </th>
+                                    
+                                    
+                                    
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <h1 class="text-xl text-left font-bold text-purple-700 mb-5 mt-10 ">
+                        Vaccinations Completed ({{schedule_compeleted_count}}):
+                    </h1>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border ">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3">Patient</th>
+                                    <th scope="col" class="px-4 py-3">vaccine</th>
+                                    <th scope="col" class="px-4 py-3">Date</th>
+                                    <th scope="col" class="px-4 py-3">Time</th>
+                                    <th scope="col" class="px-4 py-3">State</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for schedule in schedule_compeleted %}
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.patient.user.username}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.vaccine}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.schedule_date}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{schedule.schedule_time}}
+                                    </th>
+                                    
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        
+                                        <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Completed</span>
+                                    </th>
+                                    
+                                    
+                                    
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>                
+    </div>
+</section>
+{% endblock %}

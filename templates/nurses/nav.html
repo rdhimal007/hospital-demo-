@@ -1,0 +1,23 @@
+<div class="font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+   
+    
+    <a href="{% url "nurses:info" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if not "update" in request.path and not "add/schedule" in request.path and not "my_schedule" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Dashboard
+    </a>
+    <a href="{% url "nurses:update" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if "update" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Update Information
+    </a>
+    <a href="{% url "nurses:add_schedule" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-green-700 {% if "add/schedule" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Add Schedule
+    </a>
+    <a href="{% url "nurses:my_schedule" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if "my_schedule" in request.path and not "completed" in request.path  %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Vaccinations Schedule
+    </a>
+    <a href="{% url "nurses:my_schedule_completed" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if "completed" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Vaccinations Completed
+    </a>
+    
+    <a href="{% url "accounts:logout" %}" class="block w-full px-4 py-2 rounded-b-lg cursor-pointer hover:bg-red-100 hover:text-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:text-red-700 bg-red-50 text-red-600">
+        Log out
+    </a>
+</div>

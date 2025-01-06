@@ -1,0 +1,17 @@
+<div class="font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+   
+    
+    <a href="{% url "accounts:admin_nurses" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if "nurses" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Nurses
+    </a>
+    <a href="{% url "accounts:admin_vaccines" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if "vaccines" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Vaccines
+    </a>
+    <a href="{% url "accounts:admin_patients" %}" class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-purple-700 {% if "patients" in request.path %}text-purple-700 bg-gray-100{% endif %} focus:outline-none focus:ring-2 focus:ring-purple-700 focus:text-purple-700 ">
+        Patients
+    </a>
+    
+    <a href="{% url "accounts:logout" %}" class="block w-full px-4 py-2 rounded-b-lg cursor-pointer hover:bg-red-100 hover:text-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:text-red-700 bg-red-50 text-red-600">
+        Log out
+    </a>
+</div>

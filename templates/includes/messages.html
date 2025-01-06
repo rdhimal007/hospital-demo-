@@ -1,0 +1,11 @@
+{% if messages %}
+
+    {% for message in messages %}
+    
+    <div class="p-4 mb-4 text-md text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400" role="alert">
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}{% endif %}
+        {{message}}
+    </div>
+    {% endfor %}
+
+{% endif %}

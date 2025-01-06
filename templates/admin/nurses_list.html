@@ -1,0 +1,86 @@
+{% extends "../base.html" %}
+{% block title %}Admin Panel{% endblock %}
+{% block content %}
+<section class="bg-white dark:bg-gray-900">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class=" lg:mt-0 lg:col-span-3">
+            {% include "./nav.html" %}
+        </div>
+        <div class=" lg:col-span-9">
+            <div class=" ">
+                <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
+                    <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+                        <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+                            <div class="flex items-center flex-1 space-x-4">
+                                <h5>
+                                    <span class="text-gray-500">Total Nurses: </span>
+                                    <span class="dark:text-white">{{count_nurses}}</span>
+                                </h5>
+                               
+                            </div>
+                            <div class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
+                                
+                                <a href="{% url "accounts:new_nurse" %}" class="flex items-center justify-center flex-shrink-0 px-3 py-2 text-sm font-medium text-purple-700 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                    <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                                    </svg>
+                                    Add New Nurse
+                                </a>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        
+                                        <th scope="col" class="px-4 py-3">F Name</th>
+                                        <th scope="col" class="px-4 py-3">M Name</th>
+                                        <th scope="col" class="px-4 py-3">L Name</th>
+                                        <th scope="col" class="px-4 py-3">UserName</th>
+                                        <th scope="col" class="px-4 py-3">Employeed ID</th>
+                                        <th scope="col" class="px-4 py-3">Age</th>
+                                        <th scope="col" class="px-4 py-3">Gender</th>
+                                        <th scope="col" class="px-4 py-3">Phone Number</th>
+                                        <th scope="col" class="px-4 py-3"></th>
+                                        <th scope="col" class="px-4 py-3"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for nurse in nurses %}
+                                    <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                        <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {{nurse.first_name}}
+                                        </th>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {{nurse.middle_name}}
+                                        </td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {{nurse.last_name}}
+                                        </td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{nurse.username}}</td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{nurse.get_employeed_id}}</td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{nurse.age}}</td>
+                                        
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <div class="flex items-center">
+                                                {{nurse.gender}}
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{nurse.phone_number}}</td>
+                                        
+                                        <td class="px-4 py-2 font-medium dark:text-white text-green-500 underline"><a href="{% url "accounts:nurse_details" username=nurse.username %}" class=" hover:underline">Details</a></td>
+                                        
+                                        <td class="px-4 py-2 font-medium dark:text-white underline"><a href="{% url "accounts:nerse_update" username=nurse.username %}" class="text-cyan-500 hover:underline">Edit</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+              </d>
+        </div>                
+    </div>
+</section>
+{% endblock %}
